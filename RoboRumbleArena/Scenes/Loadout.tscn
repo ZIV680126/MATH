@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/ui/Loadout.gd" id="1_ld"]
+
+[node name="Loadout" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_ld")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -240.0
+offset_right = 220.0
+offset_bottom = 240.0
+
+[node name="Title" type="Label" parent="VBox"]
+text = "Loadout"
+align = 1
+
+[node name="Chassis" type="OptionButton" parent="VBox"]
+
+[node name="Weapon" type="OptionButton" parent="VBox"]
+
+[node name="Ability" type="OptionButton" parent="VBox"]
+
+[node name="Back" type="Button" parent="VBox"]
+text = "Back"
+
+[node name="Save" type="Button" parent="VBox"]
+text = "Save"
+
+[connection signal="pressed" from="VBox/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="VBox/Save" to="." method="_on_save_pressed"]
