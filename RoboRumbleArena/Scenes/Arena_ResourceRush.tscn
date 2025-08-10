@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Scripts/game/Arena_ResourceRush.gd" id="1_rrs01"]
+[ext_resource type="Script" path="res://Scripts/game/ResourceRush.gd" id="2_rrs02"]
+[ext_resource type="PackedScene" path="res://Scenes/Robot.tscn" id="3_rbt01"]
+
+[node name="Arena_ResourceRush" type="Node3D"]
+script = ExtResource("1_rrs01")
+robot_scene = ExtResource("3_rbt01")
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="RedSpawns" type="Node3D" parent="World"]
+
+[node name="RedSpawn1" type="Marker3D" parent="World/RedSpawns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="BlueSpawns" type="Node3D" parent="World"]
+
+[node name="BlueSpawn1" type="Marker3D" parent="World/BlueSpawns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.866, 0, 0.5, -0.25, 0.939693, 0.238, -0.433, -0.342, 0.833, 0, 20, 20)
+current = true
+
+[node name="Mode" type="Node" parent="."]
+script = ExtResource("2_rrs02")

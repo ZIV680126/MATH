@@ -1,0 +1,36 @@
+; Engine configuration file.
+; It's best edited using the Godot editor.
+; Format: 4
+
+[application]
+config/name="Robo-Rumble Arena"
+run/main_scene="res://Scenes/MainMenu.tscn"
+config/version="0.1.0"
+
+[autoload]
+NetworkManager="*res://Scripts/network/NetworkManager.gd"
+GameState="*res://Scripts/game/GameState.gd"
+Profile="*res://Scripts/systems/PlayerProfile.gd"
+
+[display]
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation="landscape"
+
+[input]
+ui_accept={"deadzone":0.5,"events":[{"device":-1,"mouse_button":{"button_index":1,"cancel":false,"doubleclick":false,"factor":1.0,"pressed":false}}]}
+move_up={"deadzone":0.2,"events":[{"device":-1,"key":{"physical_scancode":87}}]}
+move_down={"deadzone":0.2,"events":[{"device":-1,"key":{"physical_scancode":83}}]}
+move_left={"deadzone":0.2,"events":[{"device":-1,"key":{"physical_scancode":65}}]}
+move_right={"deadzone":0.2,"events":[{"device":-1,"key":{"physical_scancode":68}}]}
+fire={"deadzone":0.5,"events":[{"device":-1,"mouse_button":{"button_index":1}}]}
+ability={"deadzone":0.5,"events":[{"device":-1,"key":{"physical_scancode":32}}]}
+
+[physics]
+common/physics_ticks_per_second=60
+
+[rendering]
+renderer/rendering_method="forward_plus"
+anti_aliasing/quality/msaa_3d=2
